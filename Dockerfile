@@ -8,11 +8,11 @@ RUN apk add --update --no-cache bash openssh && \
 ADD authorized_keys /root/.ssh/
 RUN chmod 600 /root/.ssh/authorized_keys
 
-ADD run.sh /
-RUN chmod 755 /run.sh
+ADD entry.sh /
+RUN chmod 755 /entry.sh
 
 EXPOSE 22
 
-ENTRYPOINT ["/run.sh"]
+ENTRYPOINT ["/entry.sh"]
 
 CMD ["/usr/sbin/sshd", "-D", "-f", "/etc/ssh/sshd_config"]
