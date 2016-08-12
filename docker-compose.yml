@@ -1,0 +1,7 @@
+version: '2'
+
+services:
+  ssh:
+    image: lordmatanza/docker-sshd
+    ports:
+      - '2222:22'
